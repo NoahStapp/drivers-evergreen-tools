@@ -23,4 +23,5 @@ done
 
 func init --$FUNC_RUNTIME
 func azure functionapp publish $FUNC_APP_NAME
+set +o errexit
 bash $SCRIPT_DIR/invoke.sh

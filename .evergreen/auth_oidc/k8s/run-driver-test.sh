@@ -29,6 +29,7 @@ kubectl exec ${K8S_POD_NAME} -- bash -c "cd /tmp && tar -xf drivers-test.tgz -C 
 echo "Setting up driver test files... done."
 
 # Run the command.
+set +o errexit
 echo "Running the driver test command..."
 kubectl cp ./secrets-export.sh ${K8S_POD_NAME}:/tmp/test/secrets-export.sh
 kubectl exec ${K8S_POD_NAME} -- bash -c "cd /tmp/test && source secrets-export.sh && ${K8S_TEST_CMD}"

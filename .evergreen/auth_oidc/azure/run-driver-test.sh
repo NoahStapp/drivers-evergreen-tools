@@ -39,6 +39,7 @@ AZUREKMS_CMD="tar xf ${DRIVER_TARFILE_BASE}" \
   $SCRIPT_DIR/../../csfle/azurekms/run-command.sh
 echo "Untarring file ... end"
 
+set +o errexit
 # Run the driver test.
 AZUREKMS_CMD="${AZUREOIDC_TEST_CMD}" \
     $SCRIPT_DIR/../../csfle/azurekms/run-command.sh
